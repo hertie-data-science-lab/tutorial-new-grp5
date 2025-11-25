@@ -85,7 +85,6 @@ for i, cls in enumerate(unique_classes):
 
 plt.tight_layout()
 # SAVE FIGURE
-plt.savefig("scr/figures/unique_classes.png", dpi=300, bbox_inches="tight")
 plt.show()
 
 # ----------------------------------------------------
@@ -120,5 +119,4 @@ for dir_subgroup, ax in tqdm(zip(dir_subgroups, axs.flatten())):
     mean_images.append(mean_face)
 plt.tight_layout()
 # SAVE FIGURE
-plt.savefig("scr/figures/class_examples.png", dpi=300, bbox_inches="tight")
 plt.show()
