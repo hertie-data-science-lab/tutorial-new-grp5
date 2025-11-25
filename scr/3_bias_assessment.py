@@ -30,3 +30,27 @@ print("Model loaded successfully.")
 # model structure summary 
 summary(model, input_size=(1, 3, 224, 224))
 
+# Basic fairness assessment 
+group_correct = defaultdict(int)
+group_total = defaultdict(int)
+
+with torch.no_grad():
+    for images, labels in dataloader:
+        images, labels = images.to(device), labels.to(device)
+
+        outputs = model(images)
+        preds = torch.argmax(outputs, dim=1)
+
+        for t, p in zip(labels, preds):
+            true_class = classes[t.item()]
+            group_total[true_class] += 1
+            if t.item() == p.item():
+                group_correct[true_class] += 1
+
+print("\n=== Fairness / Bias Assessment ===")
+overall_correct = sum(group_correct.values())
+print(overall_correct)
+overall_total = sum(group_total.values())
+print(overall_total)
+overall_acc = overall_correct / overall_total * 100
+print(f"Overall accuracy: {overall_acc:.2f}%\n")
