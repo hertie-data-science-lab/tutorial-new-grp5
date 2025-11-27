@@ -20,7 +20,7 @@ from PIL import Image
 import random
 
 # Common project imports
-from config import DATA_DIR, SAMPLE_SIZE, BATCH_SIZE, EPOCHS
+from src.config import DATA_DIR, SAMPLE_SIZE, BATCH_SIZE, EPOCHS
 
 # From https://github.com/visionjo/facerec-bias-bfw/blob/master/code/notebooks/1a_generate_mean_faces.ipynb
 import pathlib
