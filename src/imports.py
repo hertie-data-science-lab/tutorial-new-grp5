@@ -4,7 +4,7 @@ import time
 import torch
 
 from torch import nn, optim
-from torch.utils.data import DataLoader
+from torch.utils.data import DataLoader, Subset, random_split
 from torchvision import datasets, transforms, models
 from sklearn.model_selection import train_test_split
 from torchinfo import summary

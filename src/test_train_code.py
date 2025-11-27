@@ -1,5 +1,8 @@
 from imports import *
 
+torch.manual_seed(42)
+np.random.seed(42)
+random.seed(42)
 # ----------------------------------------------------
 # 2. TRANSFORMS
 # ----------------------------------------------------
@@ -24,6 +27,28 @@ val_transform = transforms.Compose([
 print("Loading dataset...")
 train_dataset = datasets.ImageFolder(DATA_DIR, transform=train_transform)
 val_dataset = datasets.ImageFolder(DATA_DIR, transform=val_transform)
+
+
+# Split indices
+train_size = int(0.8 * len(train_dataset))
+val_size = len(train_dataset) - train_size
+
+train_indices, val_indices = random_split(
+    range(len(train_dataset)), 
+    [train_size, val_size],
+    generator=torch.Generator().manual_seed(42)  # For reproducibility
+)
+
+# Create subsets with appropriate transforms
+train_subset = Subset(train_dataset, train_indices.indices)
+val_subset = Subset(val_dataset, val_indices.indices)
+
+# Create dataloaders
+train_loader = DataLoader(train_subset, batch_size=32, shuffle=True)
+val_loader = DataLoader(val_subset, batch_size=32, shuffle=False)
+
+# Save validation indices for later use
+torch.save(val_indices.indices, 'val_indices.pt')
 
 class_names = train_dataset.classes
 num_classes = len(class_names)
