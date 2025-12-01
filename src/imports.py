@@ -41,4 +41,7 @@ from tqdm import tqdm
     #cd facerec-bias-bfw/code
     #pip install .
 
+# OR This also helps pip install git+https://github.com/visionjo/facerec-bias-bfw.git@master#subdirectory=code
+
+
 from facebias.image import read, write, resize 
