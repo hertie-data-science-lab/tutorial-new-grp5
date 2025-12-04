@@ -186,6 +186,7 @@ class FaceDatasetAnalyzer:
             ax.set_yticks([])
             ax.set_title(str(dir_subgroup).split('/')[-1], fontsize=20)
             
+            
             mean_images.append(mean_face)
         
         # Hide unused subplots
