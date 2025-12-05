@@ -166,3 +166,16 @@ def evaluate_fairness(model, data_loader, classes, device="cpu"):
 
 def summarize_model(model):
     return summary(model, input_size=(1, 3, 224, 224))
+
+# Helper function to reverse the normalization for plotting
+def denormalize_image(tensor):
+    """Denormalizes a single (C, H, W) tensor to (H, W, C) numpy array [0, 1]."""
+    MEAN = torch.tensor([0.485, 0.456, 0.406]).view(3, 1, 1)
+    STD = torch.tensor([0.229, 0.224, 0.225]).view(3, 1, 1)
+    
+    img_tensor = torch.from_numpy(tensor) if isinstance(tensor, np.ndarray) else tensor.cpu()
+    
+    denormalized_img = img_tensor * STD + MEAN
+    # Convert from (C, H, W) to (H, W, C) for matplotlib
+    denormalized_img = denormalized_img.permute(1, 2, 0).numpy()
+    return np.clip(denormalized_img, 0, 1) # Clip to valid range [0, 1]
