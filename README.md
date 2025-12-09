@@ -1,5 +1,5 @@
 # Explainable-AI-XAI-and-facial-recognition
-This tutorial focuses on explainable AI (XAI) and bias of the models. We believe that explainability of a model can provide insights into why it can be constructing biased decisions, and how to prevent them. Within this approach, we replicate a resnet18 model from the paper [\'Face Recognition: Too Bias, or Not Too Bias?\'] (https://doi.org/10.48550/arXiv.2002.06483) (Robinson et al., 2020) and demonstrate the usage of two packages that provide tools for explainable AI purposes: Xplique and Captum.
+This tutorial focuses on explainable AI (XAI) and bias of the models. We believe that explainability of a model can provide insights into why it can be constructing biased decisions, and how to prevent them. Within this approach, we replicate a resnet18 model from the paper '[Face Recognition: Too Bias, or Not Too Bias?](https://doi.org/10.48550/arXiv.2002.06483)' (Robinson et al., 2020) and demonstrate the usage of two packages that provide tools for explainable AI purposes: Xplique and Captum.
 
 Tutorial goes through various bias assessment techniques, gives a quick overview of attribution methods and metrics for those methods' evaluation.
 
