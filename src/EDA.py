@@ -166,8 +166,6 @@ class FaceDatasetAnalyzer:
         fig, axs = plt.subplots(n_rows, 2, figsize=figsize)
         axs = axs.flatten() if len(dir_subgroups) > 1 else [axs]
         
-        mean_images = []
-        
         for dir_subgroup, ax in tqdm(zip(dir_subgroups, axs), 
                                      total=len(dir_subgroups),
                                      desc="Computing mean faces"):
@@ -185,9 +183,6 @@ class FaceDatasetAnalyzer:
             ax.set_xticks([])
             ax.set_yticks([])
             ax.set_title(str(dir_subgroup).split('/')[-1], fontsize=20)
-            
-            
-            mean_images.append(mean_face)
         
         # Hide unused subplots
         for ax in axs[len(dir_subgroups):]:
@@ -195,8 +190,6 @@ class FaceDatasetAnalyzer:
         
         plt.tight_layout()
         plt.show()
-        
-        return mean_images
     
     def run_full_analysis(self, sample_size=500, plot_samples=True, plot_means=True):
         """
