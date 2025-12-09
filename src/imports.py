@@ -36,7 +36,7 @@ import seaborn as sns
 from pathlib import Path
 from tqdm import tqdm
 
-# to run the following, you have to run this in termal
+# to run the following, you have to run this in terminal
     #git clone https://github.com/visionjo/facerec-bias-bfw.git
     #cd facerec-bias-bfw/code
     #pip install .
