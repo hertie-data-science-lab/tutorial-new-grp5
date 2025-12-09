@@ -178,8 +178,8 @@ img {
 # Xplique
 <hr>
 
-- [Placeholder]
-- [Placeholder for screenshot/example]
+- miau
+- miau
 
 ---
 <!-- SLIDE - Explain NNs -->
@@ -204,14 +204,27 @@ img {
 
 > Goal: see **how** the model decides → reveal potential bias in the decision process
 --- 
+# Bias assessment 
+
+map
+
+
+--- 
+# Bias assessment 
+
+- Inconsistent feature attribution for Asian males and White females
+- Limited reliance on facial periphery, especially for female examples
+- Uneven or asymmetric activation for White males
+- Group-specific deviations from the general IG pattern
+---
+
 
 <!-- SLIDE 11 (Optional) -->
 # Thank You!
-<hr>
-## Questions?
+Questions?
 
 --- 
 
 # Sources
-<hr>
+
 ---
