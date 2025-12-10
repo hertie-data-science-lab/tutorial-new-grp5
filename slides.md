@@ -25,8 +25,8 @@ style: |
   }
 ---
 <!-- SLIDE 1 -->
-# **Explainable AI and Facial Rcognition**
-## do we have a subtitle
+# **Explainable AI and Facial Recognition**
+ 
 
 **Group 5**
 **Names:** Laia Domenech Burin, Sofiya Berdiyeva, Giulia Maria Petrilli, Fanus Ghorjani
@@ -37,7 +37,7 @@ style: |
 
 # What is Explainable AI?
 
-- Makes ML models and predictions **understandable** for humans  
+- A set of processes that makes ML models and predictions **understandable** for humans  
 - Needed in **high-stakes public policy** domains  
   (e.g., security, justice, healthcare, social welfare)
 - Users are not only data scientists → also **authorities & decision-makers**
