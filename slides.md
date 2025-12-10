@@ -43,14 +43,13 @@ style: |
 - Users are not only data scientists → also **authorities & decision-makers**
 - Explanations must **support real decisions** and human accountability
 
-> Source: Amarasinghe et al., 2020
 ---
 <!-- SLIDE - Why Explainable AI matters -->
 # Why Explainable AI matters
 
 - In sensitive contexts, AI bias can cause **unequal treatment & human-rights violations**, especially for racialized groups (George, 2022)  
-- Errors are not neutral → misclassifications decide **who passes, who gets stopped, who gets flagged** — risk of **«discrimination by default»**  
-- In border & migration contexts, such systems work at the **“border of rights”** — racism and xenophobia risks are particularly high  
+- Errors are not neutral → misclassifications decide **who passes, who gets stopped, who gets flagged** — risk of **discrimination by default**  
+- In border & migration contexts, such systems work at the **border of rights**, risks of racism are particularly high  
 - States have an obligation to protect people from discrimination by ensuring **regulation, oversight & transparency** of AI systems  
 ---
 <!-- SLIDE - Policy Relevance -->
@@ -134,6 +133,20 @@ img {
 ![Per-class performance metrics](figures/per_class_performance_metrics.png)
 
 ---
+<!-- SLIDE - Metrics to Assess Bias (I) -->
+# Metrics to Assess Bias (I)
+
+ In the `evaluate_fairness` function, we also compute: 
+
+- **Demographic Parity:** 
+    -  **ideal case:** all groups have same similar positive prediction rates. 
+- **Equal Opportunity (TPR):** 
+    - **ideal case:** all groups should have similar TPR.
+- **Individual Fairness Proxy (Embedding Distance):** 
+    - **ideal case:** all groups should have similar average embedding distances, indicating the model recognizes comparable levels of individual variation across groups and doesn't stereotype or homogenize any particular group.
+
+
+---
 <!-- SLIDE - Metrics to Assess Bias (II) -->
 # Metrics to Assess Bias (II)
 
@@ -148,7 +161,6 @@ img {
 
 > Takeaway: Model shows **clear group fairness disparities**.
 ---
-
 
 <!-- SLIDE - Key Bias Findings -->
 # Key Bias Findings
@@ -166,48 +178,89 @@ img {
 ---
 
 <!-- SLIDE 8 -->
-# Libraries
-<hr>
 
-- [Placeholder for tools]
-- [Placeholder for references]
+# Packages for Explainability
+
+- After training our CNN, we analyze **how** it makes decisions  
+- We use two XAI libraries:
+  - **Xplique** → **feature attribution** & interpretability tools  
+  - **eXplain-NNs** → **feature attribution** + latent representation insights
+- Different models focus on different facial regions → can reveal **sources of bias**
+- Explainability helps us **link performance disparities** to **model decision behavior**
+
+> Goal: Make the model’s “black box” transparent and trace unfair outcomes to their cause
+
 
 ---
 
 <!-- SLIDE 9 -->
 # Xplique
-<hr>
 
-- miau
-- miau
+## Attribution Methods
+
+- Explain **which image regions** drive the model’s decision  
+- Help detect **inconsistent or biased** feature use across groups  
+- Different explainers reveal different perspectives → cross-checking increases reliability  
+
+### Methods used in our analysis:
+- **Saliency** → highlights sensitive pixels via gradients  
+- **Integrated Gradients (IG)** → smoother & more reliable attribution  
+- **SmoothGrad** → reduces noise by averaging multiple saliency maps  
+- **Occlusion** → tests influence by masking image patches  
+
+> Combining multiple explainers helps ensure robust and trustworthy interpretations.
+
 
 ---
 <!-- SLIDE - Explain NNs -->
 
-# Explain NNs
+# Captum — Gradient-based Explainability
 
-- Open-source library for **Explainable AI** in neural networks  
-- Focus on **latent space analysis** and **uncertainty estimation**  
-- Works for **classification networks** like our model  
+- Additional XAI library for **PyTorch**
+- We use:
+  - **Saliency** → highlights sensitive pixels
+  - **Integrated Gradients** → reliable attribution along gradient paths
+> IG helps validate whether the model consistently relies on meaningful facial regions.
+
+- Focus on **bias across demographic groups**
+- Images are preprocessed (resize → tensor → normalization)
+  → ensures valid and consistent model inputs
+
+> Captum helps us visually compare how the model uses features across groups.
+
+--- 
+
+# Bias Assessment — Qualitative Insights
+
+- We combine **performance metrics** and **attribution results**
+  to assess model behavior across groups
+- Preliminary: based on **few qualitative examples** (≈ 5 per group)
+- Findings are **exploratory**, not yet statistically validated
+- Approach can be scaled for **systematic and quantitative** fairness evaluation
+
+> Goal: detect early signs of biased decision behavior across demographic groups.
+
+<!-- SLIDE — Saliency Attribution -->
+
+## Qualitative Bias Assessment - Saliency Maps
+
+- Highlight model-sensitive facial regions  
+- Compare feature usage across demographic groups  
+- Brighter = stronger influence on classification
+
+--- 
+# Saliency Maps — Groups 1–4
+
+<div style="text-align: center;">
+  <img src="figures/xplique_saliency_top.png" width="90%">
+</div>
 
 ---
+# Saliency Maps — Groups 5–8
 
-### Why we use Explain NNs
-
-- Our results show **performance differences between groups**
-  → we need to understand **why** the model performs worse for some groups  
-- XAI helps to **open the black box** and detect hidden bias
-
-- We applied:
-  - **Saliency Maps** → shows activated facial regions
-  - **Integrated Gradients (IG)** → more **reliable** feature attribution over multiple pixel paths
-
-> Goal: see **how** the model decides → reveal potential bias in the decision process
---- 
-# Bias assessment 
-
-map
-
+<div style="text-align: center;">
+  <img src="figures/xplique_saliency_bottom.png" width="90%">
+</div>
 
 --- 
 # Bias assessment 
@@ -226,5 +279,23 @@ Questions?
 --- 
 
 # Sources
+<!-- SLIDE — Bibliography -->
 
+- Amarasinghe, K., Rodolfa, K., Lamba, H., & Ghani, R. (2020). *Explainable machine learning for public policy: Use cases, gaps, and research directions.* arXiv:2010.14374.
+
+- Hu, S., Tian, J., Xie, H., & Liu, J. (2021). *Multidimensional face representation in a DCNN reveals the mechanism underlying AI racism.* Frontiers in Computational Neuroscience, 15. https://doi.org/10.3389/fncom.2021.620281
+
+- Robinson, J. P., Livitz, G., Henon, Y., Qin, C., Fu, Y., & Timoner, S. (2020). Face Recognition: Too Bias, or Not Too Bias? (No. arXiv:2002.06483). arXiv. https://doi.org/10.48550/arXiv.2002.06483
+
+- Lynch, J. (2024). *Bias and Biometrics: Regulating corporate responsibility and new technologies.*
+
+- Özmen Garibay, O., & Gallegos, G. (2022). *Explainability and Fairness in Machine Learning.*
+---
+- Töper, M., & Kleemann, J. (2025). *Analyse: Polizeiliche Gesichtserkennung in Deutschland.*
+
+- EU Commission. ETIAS & EES — AI in high-risk border control decision systems.
+### XAI Tooling
+- Tutorials—Xplique. (n.d.). Retrieved December 9, 2025, from https://deel-ai.github.io/xplique/latest/tutorials/
+
+- eXplain-NNs — explainability toolkit for deep learning classification models.
 ---
