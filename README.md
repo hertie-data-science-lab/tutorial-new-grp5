@@ -10,19 +10,19 @@ In the tutorial, we:
 
 3. Apply a naive approach to qualitatively analyze a small sample of images through attribution/saliency maps to derive differences between highlighed regions among classes.
 
-To download the data with classified face images, please use this [Dropbox link](https://www.dropbox.com/scl/fi/5gindh41lrw8j7bgyv9mq/BFW-Release.zip?rlkey=k7kf4knhm18qi3be661m8qmo4&e=2&st=w5k6o36d&dl=0%3E)
+To download the data with classified face images, please use this [Dropbox link](https://www.dropbox.com/scl/fi/5gindh41lrw8j7bgyv9mq/BFW-Release.zip?rlkey=k7kf4knhm18qi3be661m8qmo4&e=2&st=w5k6o36d&dl=0%3E).
 
 Since Xplique is mainly working with Tensorflow, which is not supported by the latest versions of Python, please use Python 3.9–3.12.
 
-# Contributions:
+# Contributions
 
-**Giulia Maria Petrilli** - wrote helpers code for data and model loading, preprocessing and bias assessment, prepared an in-class presentation together with Fanus, reviewed and tested code and added text throughout tutorial preparation. You can track related GitHub commits in the current AND [our first GitHub repo](https://github.com/GiuliaGGG/Explainable-AI-XAI-and-facial-recognition/commits/main/), that was used before the official link was fixed.
+**Giulia Maria Petrilli (236888)** - wrote helpers code for data and model loading, preprocessing and bias assessment, prepared an in-class presentation together with Fanus, reviewed and tested code and added text throughout tutorial preparation. You can track related GitHub commits in the current AND [our first GitHub repo](https://github.com/GiuliaGGG/Explainable-AI-XAI-and-facial-recognition/commits/main/), that was used before the official link was fixed.
 
-**Laia Domenech Burin** - refactored and modularized EDA code, created the section of the same name in the notebook with plots and accompanying text, debugged the final code and enriched interpretations. Last but not least, starred in the main tutorial video. 
+**Laia Domenech Burin (241597)** - refactored and modularized EDA code, created the section of the same name in the notebook with plots and accompanying text, debugged the final code and enriched interpretations. Last but not least, starred in the main tutorial video. 
 
-**Fanus Ghorjani** - created a code and text about Captum library, worked on an in-class presentation with Giulia.
+**Fanus Ghorjani (248835)** - created a code and text about Captum library, worked on an in-class presentation with Giulia.
 
-**Sofiya Berdiyeva** - prepared parts related to Xplique library and naive attribution maps analysis, README.md and requirements.txt.
+**Sofiya Berdiyeva (246934)** - prepared parts related to Xplique library and naive attribution maps analysis, README.md and requirements.txt.
 
 
 # References
