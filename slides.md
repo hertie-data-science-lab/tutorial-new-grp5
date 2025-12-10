@@ -112,9 +112,12 @@ img {
 - Representative **mean faces** per demographic subgroup  
   (Ethnicity × Gender)
 
-<img src="figures/mean_faces_all_withlabels.png">
+|                       |                       |
+|-----------------------|-----------------------|
+| ![](figures/mean_faces_1.png) | ![](figures/mean_faces_2.png) |
 
 > Noticeable visual variation across sub-groups
+
 
 
 ---
