@@ -129,7 +129,7 @@ img {
 
 - Precision
 - Accuracy
-- F1: represents model's overall ability to recognize a class bias.
+- F1
 
 ![Per-class performance metrics](figures/per_class_performance_metrics.png)
 
