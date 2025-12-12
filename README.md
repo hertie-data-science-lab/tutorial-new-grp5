@@ -1,4 +1,4 @@
-# Explainable AI and Facial Recognition
+# Addressing fairness and bias in facial recognition with Explainable AI 
 
 This tutorial focuses on explainable AI (XAI) and bias of the image classification models. We believe that explainability of a model can provide insights into why it can be constructing biased decisions, and how to prevent them. Within this approach, we replicate a [resnet18 model](https://github.com/visionjo/facerec-bias-bfw?tab=readme-ov-file) from the paper '[Face Recognition: Too Bias, or Not Too Bias?](https://doi.org/10.48550/arXiv.2002.06483)' (Robinson et al., 2020) and demonstrate the usage of two packages that provide tools for explainable AI purposes: Xplique and Captum.
 
