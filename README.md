@@ -14,6 +14,10 @@ To download the data with classified face images, please use this [Dropbox link]
 
 Since Xplique is mainly working with Tensorflow, which is not supported by the latest versions of Python, please use Python 3.9–3.12.
 
+# Video Tutorial
+
+The file was too heavy for Github, so the video can be found on [this link](https://drive.google.com/file/d/1GpCDze4pH-8wlyQThnooFaGPMcJ20SSp/view?usp=sharing).
+
 # Contributions
 
 **Giulia Maria Petrilli (236888)** - wrote helpers code for data and model loading, preprocessing and bias assessment, prepared an in-class presentation together with Fanus, reviewed and tested code and added text throughout tutorial preparation. You can track related GitHub commits in the current AND [our first GitHub repo](https://github.com/GiuliaGGG/Explainable-AI-XAI-and-facial-recognition/commits/main/), that was used before the official link was fixed.
