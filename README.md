@@ -18,7 +18,7 @@ Since Xplique is mainly working with Tensorflow, which is not supported by the l
 
 **Giulia Maria Petrilli (236888)** - wrote helpers code for data and model loading, preprocessing and bias assessment, prepared an in-class presentation together with Fanus, reviewed and tested code and added text throughout tutorial preparation. You can track related GitHub commits in the current AND [our first GitHub repo](https://github.com/GiuliaGGG/Explainable-AI-XAI-and-facial-recognition/commits/main/), that was used before the official link was fixed.
 
-**Laia Domenech Burin (241597)** - refactored and modularized EDA code, created the section of the same name in the notebook with plots and accompanying text, debugged the final code and enriched interpretations. Last but not least, starred in the main tutorial video. 
+**Laia Domenech Burin (241597)** - refactored and modularized code, created the section of the same name in the notebook with plots and accompanying text, debugged the final code and enriched interpretations. Last but not least, starred in the main tutorial video. 
 
 **Fanus Ghorjani (248835)** - created a code and text about Captum library, worked on an in-class presentation with Giulia.
 
